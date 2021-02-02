@@ -19,7 +19,7 @@ U 1 1 60196CD0
 P 1700 3000
 F 0 "J1" H 1750 3917 50  0000 C CNN
 F 1 "Conn_02x15_Odd_Even" H 1750 3826 50  0000 C CNN
-F 2 "M5Stack-Module-Template:M5Stack_PinHeader_2x15_P2.54mm" H 1700 3000 50  0001 C CNN
+F 2 "lib:M5Stack_PinHeader_2x15_P2.54mm" H 1700 3000 50  0001 C CNN
 F 3 "~" H 1700 3000 50  0001 C CNN
 	1    1700 3000
 	1    0    0    -1  
