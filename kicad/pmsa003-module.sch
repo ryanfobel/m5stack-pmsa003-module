@@ -4,9 +4,9 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title ""
-Date ""
-Rev ""
+Title "m5stack-pmsa003-module"
+Date "2021-02-06"
+Rev "v0.1"
 Comp ""
 Comment1 ""
 Comment2 ""
@@ -25,7 +25,7 @@ F 3 "~" H 1700 3000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Bitmap
-Pos 2250 1200
+Pos 2450 1275
 Scale 1.000000
 Data
 89 50 4E 47 0D 0A 1A 0A 00 00 00 0D 49 48 44 52 00 00 03 E8 00 00 03 E8 08 02 00 00 00 C2 C1 43 
@@ -16255,4 +16255,111 @@ F 3 "" H 2250 2800 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	2250 2800 2000 2800
+$Comp
+L Connector_Generic:Conn_02x05_Odd_Even J2
+U 1 1 6019A810
+P 4650 2600
+F 0 "J2" H 4700 3017 50  0000 C CNN
+F 1 "PMSA003" H 4700 2926 50  0000 C CNN
+F 2 "lib:PMSA003" H 4650 2600 50  0001 C CNN
+F 3 "~" H 4650 2600 50  0001 C CNN
+	1    4650 2600
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR0104
+U 1 1 6019E28E
+P 4450 2400
+F 0 "#PWR0104" H 4450 2250 50  0001 C CNN
+F 1 "+5V" V 4465 2528 50  0000 L CNN
+F 2 "" H 4450 2400 50  0001 C CNN
+F 3 "" H 4450 2400 50  0001 C CNN
+	1    4450 2400
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	4450 2400 4450 2100
+Wire Wire Line
+	4450 2100 4950 2100
+Wire Wire Line
+	4950 2100 4950 2400
+Connection ~ 4450 2400
+$Comp
+L power:GND #PWR0106
+U 1 1 6019FC6F
+P 4950 2500
+F 0 "#PWR0106" H 4950 2250 50  0001 C CNN
+F 1 "GND" V 4955 2372 50  0000 R CNN
+F 2 "" H 4950 2500 50  0001 C CNN
+F 3 "" H 4950 2500 50  0001 C CNN
+	1    4950 2500
+	0    -1   -1   0   
+$EndComp
+Connection ~ 4950 2100
+Text GLabel 5300 2800 2    50   Input ~ 0
+PMS_SET
+Text GLabel 4450 2800 0    50   Input ~ 0
+PMS_TX
+Text GLabel 4450 2700 0    50   Input ~ 0
+PMS_RX
+Text GLabel 4000 2600 0    50   Input ~ 0
+PMS_RESET
+NoConn ~ 4950 2600
+NoConn ~ 4950 2700
+Text GLabel 1500 2900 0    50   Input ~ 0
+PMS_TX
+Text GLabel 1500 2600 0    50   Input ~ 0
+PMS_SET
+Text GLabel 2000 2900 2    50   Input ~ 0
+PMS_RX
+Text GLabel 2000 3200 2    50   Input ~ 0
+PMS_RESET
+$Comp
+L Device:R_Small R2
+U 1 1 601A427D
+P 5300 2200
+F 0 "R2" H 5359 2246 50  0000 L CNN
+F 1 "10k" H 5359 2155 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" H 5300 2200 50  0001 C CNN
+F 3 "~" H 5300 2200 50  0001 C CNN
+	1    5300 2200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small R1
+U 1 1 601A5C5F
+P 4000 2200
+F 0 "R1" H 4059 2246 50  0000 L CNN
+F 1 "10k" H 4059 2155 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" H 4000 2200 50  0001 C CNN
+F 3 "~" H 4000 2200 50  0001 C CNN
+	1    4000 2200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0105
+U 1 1 6019EECA
+P 4450 2500
+F 0 "#PWR0105" H 4450 2250 50  0001 C CNN
+F 1 "GND" V 4455 2372 50  0000 R CNN
+F 2 "" H 4450 2500 50  0001 C CNN
+F 3 "" H 4450 2500 50  0001 C CNN
+	1    4450 2500
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4950 2100 5300 2100
+Wire Wire Line
+	5300 2300 5300 2800
+Wire Wire Line
+	4950 2800 5300 2800
+Wire Wire Line
+	4000 2100 4450 2100
+Connection ~ 4450 2100
+Wire Wire Line
+	4000 2300 4000 2600
+Wire Wire Line
+	4000 2600 4450 2600
+Text Notes 4225 1325 0    39   ~ 0
+Note that pins 13 and 14 are\nreserved for serial USB and that\npins 2, 4, and 26 (i.e., GPIO>33)\nare input only.
 $EndSCHEMATC
